@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-nginx
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: myapp
+    image: nginx:latest
+    ports:
+      - containerPort: 80
+        
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-green
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: myapp-green
+    image: achinta1/achinta-colors:green
+    ports:
+      - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-blue
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: myapp-green
+    image: achinta1/achinta-colors:blue
+    ports:
+      - containerPort: 80
+
